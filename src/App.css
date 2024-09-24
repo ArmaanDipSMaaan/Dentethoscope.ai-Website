@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #f4f7f6;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Custom Scrollbar Styles */
+body::-webkit-scrollbar {
+  width: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #61dafb, #1a73e8); /* Gradient color */
+  border-radius: 8px; /* Rounded corners */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    45deg,
+    #1a73e8,
+    #61dafb
+  ); /* Reversed gradient on hover */
+}
+
+/* Header Styles */
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px 50px;
+  background-color: #282c34;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
+header .logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  padding: 150px 20px;
+  background: linear-gradient(to bottom right, #61dafb, #1a73e8);
+  color: white;
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: white;
+  color: #282c34;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #61dafb;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* Section Styles */
+section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #282c34;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: #61dafb;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Services, AI Integration, Case Studies Styles */
+.services-container,
+.case-container,
+.ai-details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-card,
+.case-card,
+.ai-feature {
+  width: 300px;
+  margin: 20px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.case-card:hover,
+.ai-feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i,
+.ai-feature i {
+  font-size: 48px;
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.service-card h3,
+.ai-feature h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #282c34;
+  color: white;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Contact Form Styles */
+form input,
+form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #f9f9f9;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #1a73e8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .services-container,
+  .case-container,
+  .ai-details {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .service-card,
+  .case-card,
+  .ai-feature {
+    width: 90%;
+  }
+
+  .hero h2 {
+    font-size: 36px;
   }
 }
